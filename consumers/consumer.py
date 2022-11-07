@@ -99,6 +99,7 @@ class KafkaConsumer:
             logger.error(f'Msg error {msg.error()}')
         else:
             self.message_handler(msg)
+            logger.info(f"Consumer Message key :{msg}")
             return 1
 
     def close(self):
